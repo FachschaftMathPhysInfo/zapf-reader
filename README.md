@@ -45,7 +45,7 @@ Falls du Hilfe brauchst, dann melde ich bei trix@.
 
 
 ### Mantelbogen
-vorne außen: Cover
-vorne innen: Impressum etc.
-hinten innen: Sponsoren
-hinten außen: Cover Rückseite
+* vorne außen: Cover
+* vorne innen: Impressum etc.
+* hinten innen: Sponsoren
+* hinten außen: Cover Rückseite
