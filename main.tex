@@ -1,0 +1,26 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[ngerman, 11pt, openany]{scrbook}
+\input{header}
+
+\begin{document}
+
+\newgeometry	{papersize={154mm,216mm}, layout=a5paper, layouthoffset=3mm,     layoutvoffset=3mm, inner=10mm, top=15mm, heightrounded}
+\addtocontents{toc}{\vspace{-2cm}}
+\addtocontents{toc}{~\hfill\textbf{Seite}\par}
+
+\newpage
+\setcounter{tocdepth}{1} %sections werden noch aufgelistet, subsections nicht mehr
+\small\tableofcontents
+\normalsize
+
+\input{ak/ak_e_learning}
+\input{ak/ak_fachschaftsfreundschaften}
+\input{ak/ak_fortgeschrittenenpraktikum}
+\input{ak/ak_hochschuldidaktik}
+\input{ak/ak_raumplanung}
+\input{ak/ak_akkreditierungI}
+\input{ak/ak_akkreditierungII}
+
+\end{document}
