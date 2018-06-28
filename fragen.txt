@@ -1,7 +1,0 @@
-zu klärende Fragen für die Einheitlichkeit des Readers:
-* Wie gendern wir?
-* Welche Form soll eine Tex-Datei haben?
-* Für welche Daten scheißen wir die AK-Leiter an, sie uns noch zu geben?
-* Struktur? (ich: subsections: Infos, Protokoll, Zusammenfassung)
-* Welche Abkürzungen ersetzen? (Profs, Studis, Bib)
-* Wo liegt der AK Plan? Für Zeiten, Daten
