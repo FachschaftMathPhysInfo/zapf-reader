@@ -23,6 +23,7 @@
 \usepackage{paralist}
 \usepackage{float}
 \usepackage{afterpage}
+\usepackage{ulem}
 
 % Suche nach Grafiken in ./media und .:
 \graphicspath{{./media/}{./}}
@@ -30,7 +31,7 @@
 % Satzspiegel
 \geometry{papersize={154mm,216mm}, layout=a5paper, layouthoffset=3mm,     layoutvoffset=3mm, inner=20mm, outer=15mm, top=15mm, bottom=25mm, heightrounded, marginparwidth=37mm, marginparsep=5mm}
 %\setlength{\parindent}{0pt}
-    
+
 %Headlines
 \pagestyle{fancy}
 \fancyhf{}
@@ -44,20 +45,20 @@
   {\section*{#1}\textit{#2}\\\\\bgroup\footnotesize}
   {\egroup\vspace{1cm}}
 
-%Lied-Umgebung zweispaltig mit einspaltigem Titel 
+%Lied-Umgebung zweispaltig mit einspaltigem Titel
 \newenvironment{lied*}[2]%
   {\twocolumn[\section*{#1}\textit{#2}\\]\bgroup\footnotesize}
-  {\egroup\vspace{1cm}}  
+  {\egroup\vspace{1cm}}
 
 %Lied-Umgebung komplett zweispaltig oder einspaltig jenachdem wie es davor definiert war
 \newenvironment{lied**}[2]%
   {\section*{#1}\textit{#2}\\\\\bgroup\footnotesize}
-  {\egroup\vspace{1cm}}    
-  
+  {\egroup\vspace{1cm}}
+
 %Lied-Umgebung zweispaltig ohne Untertitel
 \newenvironment{lied***}[1]%
   {\twocolumn\section*{#1}\bgroup\footnotesize}
-  {\egroup\vspace{1cm}}  
-  
+  {\egroup\vspace{1cm}}
+
 %Unterdrückt Section und Subsection Nummern, also werden nur Chapter Nummer angezeigt
   \setcounter{secnumdepth}{0}
