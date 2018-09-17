@@ -1,2 +1,2 @@
 # entfernt alle .tex Zusatzdateien
-rm *.log *.aux *.fls *.fdb_latexmk *.toc *.out
+rm *.log *.aux *.fls *.fdb_latexmk *.toc *.out *.soc
