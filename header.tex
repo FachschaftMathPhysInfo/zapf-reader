@@ -10,7 +10,6 @@
 \usepackage{eurosym}
 \usepackage[pdftex]{graphicx}
 \usepackage{fancyhdr}
-\usepackage{blindtext}
 \usepackage{todonotes}
 \usepackage{geometry}
 \usepackage{url}
@@ -25,6 +24,28 @@
 \usepackage{afterpage}
 \usepackage{ulem}
 \usepackage{outlines}
+\usepackage{xcolor}
+\usepackage{blindtext}
+\usepackage{mdwlist}     % Änderung der Zeilenabstände bei itemize und enumerate
+\usepackage{lmodern}     % Ersatz fuer Computer Modern-Schriften
+\usepackage[scaled=0.81]{helvet}     % Schriftart fuer Resos
+% \usepackage[draft, markup=underlined]{changes}
+\usepackage{csquotes}
+
+  % braucht man das?
+%\usepackage{titlesec}    % Abstand nach Überschriften neu definieren
+%\titlespacing{\subsection}{0ex}{3ex}{-1ex}
+%\titlespacing{\subsubsection}{0ex}{3ex}{-1ex}
+
+\definecolor{urlred}{HTML}{660000}
+\hypersetup{ % Design der Hyperrefs
+    colorlinks=true,
+    linkcolor=black,    % Farbe der internen Links (u.a. Table of Contents)
+    urlcolor=black,    % Farbe der url-links
+    citecolor=black} % Farbe der Literaturverzeichnis-Links
+
+\parindent 0pt                 % Absatzeinrücken verhindern (pck:blindtext)
+\parskip 12pt                 % Absätze durch Lücke trennen
 
 % Suche nach Grafiken in ./media und .:
 \graphicspath{{./media/}{./}}
@@ -32,6 +53,10 @@
 % Satzspiegel
 % \geometry{papersize={154mm,216mm}, layout=a4paper, layouthoffset=3mm,     layoutvoffset=3mm, inner=20mm, outer=15mm, top=15mm, bottom=25mm, heightrounded, marginparwidth=37mm, marginparsep=5mm}
 %\setlength{\parindent}{0pt}
+
+% Schriftarten
+\renewcommand{\sfdefault}{phv}
+\newenvironment{resofont}{\fontfamily{phv}\selectfont}{\par}
 
 %Headlines
 \pagestyle{fancy}
@@ -41,25 +66,14 @@
 %\fancyhead[RO]{\rightmark}
 \fancyfoot[RO,LE]{\thepage}
 
-%Lied-Umgebung einspaltig
-\newenvironment{lied}[2]%
-  {\section*{#1}\textit{#2}\\\\\bgroup\footnotesize}
-  {\egroup\vspace{1cm}}
-
-%Lied-Umgebung zweispaltig mit einspaltigem Titel
-\newenvironment{lied*}[2]%
-  {\twocolumn[\section*{#1}\textit{#2}\\]\bgroup\footnotesize}
-  {\egroup\vspace{1cm}}
-
-%Lied-Umgebung komplett zweispaltig oder einspaltig jenachdem wie es davor definiert war
-\newenvironment{lied**}[2]%
-  {\section*{#1}\textit{#2}\\\\\bgroup\footnotesize}
-  {\egroup\vspace{1cm}}
-
-%Lied-Umgebung zweispaltig ohne Untertitel
-\newenvironment{lied***}[1]%
-  {\twocolumn\section*{#1}\bgroup\footnotesize}
-  {\egroup\vspace{1cm}}
+% used for resos and pospaps
+% \pagestyle{empty}
+\cfoot{}
+\lfoot{Zusammenkunft aller Physik-Fachschaften}
+\rfoot{www.zapfev.de\\stapf@zapf.in}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.1pt}
+\newcommand{\gen}{*innen}
 
 %Unterdrückt Section und Subsection Nummern, also werden nur Chapter Nummer angezeigt
   \setcounter{secnumdepth}{0}
