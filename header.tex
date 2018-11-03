@@ -47,14 +47,14 @@
     citecolor=black} % Farbe der Literaturverzeichnis-Links
 
 \parindent 0pt                 % Absatzeinrücken verhindern (pck:blindtext)
-\parskip 12pt                 % Absätze durch Lücke trennen
+\parskip 4pt                 % Absätze durch Lücke trennen
 
 % Suche nach Grafiken in ./media und .:
-\graphicspath{{./media/}{./}}
+% \graphicspath{{./media/}{./}}
 
 % Satzspiegel
-% \geometry{papersize={154mm,216mm}, layout=a4paper, layouthoffset=3mm,     layoutvoffset=3mm, inner=20mm, outer=15mm, top=15mm, bottom=25mm, heightrounded, marginparwidth=37mm, marginparsep=5mm}
-% \setlength{\parindent}{0pt}
+\geometry{papersize={154mm,216mm}, layout=a5paper, layouthoffset=3mm, layoutvoffset=3mm, inner=20mm, outer=15mm, top=15mm, bottom=15mm, heightrounded, marginparwidth=7mm, marginparsep=5mm}
+\setlength{\parindent}{0pt}
 
 % Schriftarten
 \renewcommand{\sfdefault}{phv}
@@ -66,10 +66,34 @@
 % Headlines
 \pagestyle{fancy}
 \fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-% \fancyhead[LE]{\leftmark}
-% \fancyhead[RO]{\rightmark}
-\fancyfoot[RO,LE]{\thepage}
+\definecolor{unicolor}{HTML}{B5152B}
+\renewcommand{\headrulewidth}{1.5pt} % Strich unterm Header
+\renewcommand{\footrulewidth}{0pt} % Strich überm Footer
+\renewcommand{\chaptermark}[1]{ \markboth{\quad \quad \quad #1}{}} % chapter Titel mit "Formatierung"
+\renewcommand{\sectionmark}[1]{ \markright{#1 \quad \quad \quad}{}} % section Titel mit "Formatierung"
+\newlength\FHoffset
+\setlength\FHoffset{1cm}
+\addtolength\headwidth{1.5\FHoffset} % andere Länge für Header als Text
+\fancyheadoffset{\FHoffset}
+\fancyfootoffset{\FHoffset}
+
+\renewcommand{\headrule}{\hbox to\headwidth{%
+  \color{unicolor}\leaders\hrule height \headrulewidth\hfill}}
+% \renewcommand{\footrule}{\hbox to\headwidth{%
+%   \color{unicolor}\leaders\hrule height \headrulewidth\hfill}}
+
+\lhead{\leftmark}
+\chead{}
+\rhead{\rightmark}
+\lfoot{}
+\cfoot{
+  \begin{tikzpicture}
+    \node at (-0.5, 0) {\includegraphics[width=1cm, height=1cm]{vorlagen/logo2.png}};
+    \draw (0,-0.5) -- (0,0.5);
+    \node at (0.5,0) {\thepage};
+  \end{tikzpicture}
+}
+\rfoot{}
 
 % Boxen etwa für Abstimmungen in Plenen
 \newenvironment{success}[1]{
@@ -80,6 +104,7 @@
     \end{tcolorbox}
   \end{center}
 }
+
 \newenvironment{info}[1]{
   \begin{center}
     \begin{tcolorbox}[colback=blue!5!white,colframe=blue!60!black, title=#1]
@@ -88,15 +113,8 @@
     \end{tcolorbox}
   \end{center}
 }
+
 \newenvironment{danger}[1]{
-  \begin{center}
-    \begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!75!black, title=#1]
-    }
-    {
-    \end{tcolorbox}
-  \end{center}
-}
-\newenvironment{failure}[1]{
   \begin{center}
     \begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!75!black, title=#1]
     }
@@ -107,12 +125,12 @@
 
 % used for resos and pospaps
 % \pagestyle{empty}
-\cfoot{}
-\lfoot{Zusammenkunft aller Physik-Fachschaften}
-\rfoot{www.zapfev.de\\stapf@zapf.in}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0.1pt}
-\newcommand{\gen}{*innen}
+% \cfoot{}
+% \lfoot{Zusammenkunft aller Physik-Fachschaften}
+% \rfoot{www.zapfev.de\\stapf@zapf.in}
+% \renewcommand{\headrulewidth}{0pt}
+% \renewcommand{\footrulewidth}{0.1pt}
+% \newcommand{\gen}{*innen}
 
 %Unterdrückt Section und Subsection Nummern, also werden nur Chapter Nummer angezeigt
-  \setcounter{secnumdepth}{0}
+\setcounter{secnumdepth}{0}
