@@ -26,12 +26,14 @@
 \usepackage{pdfpages}
 \usepackage{subcaption}
 \usepackage{tcolorbox}
+\usepackage{titlesec}
 \usepackage{tocloft}
 \usepackage{todonotes}
 \usepackage{ulem}
 \usepackage{url}
 \usepackage{wrapfig}
 \usepackage{xcolor}
+\usepackage{xpatch}
 % \usepackage[draft, markup=underlined]{changes}
 
   % braucht man das?
@@ -47,7 +49,10 @@
     citecolor=black} % Farbe der Literaturverzeichnis-Links
 
 \parindent 0pt                 % Absatzeinrücken verhindern (pck:blindtext)
-\parskip 4pt                 % Absätze durch Lücke trennen
+\parskip 2pt                 % Absätze durch Lücke trennen
+
+% Inhaltsverzeichnis
+\renewcommand\cftbeforetoctitleskip{-1cm}
 
 % Suche nach Grafiken in ./media und .:
 % \graphicspath{{./media/}{./}}
@@ -59,7 +64,7 @@
 % Schriftarten
 \fontfamily{pag}\selectfont % Avantgar
 %\renewcommand{\sfdefault}{phv}
-%\newenvironment{resofont}{\fontfamily{phv}\selectfont}{\par}
+% \newenvironment{resofont}{\fontfamily{phv}\selectfont}{\par}
 
 % itemize item titlespacing
 % ??? ohne enumitem
@@ -70,24 +75,32 @@
 \definecolor{unicolor}{HTML}{B5152B}
 \renewcommand{\headrulewidth}{1.5pt} % Strich unterm Header
 \renewcommand{\footrulewidth}{0pt} % Strich überm Footer
-\renewcommand{\chaptermark}[1]{ \markboth{\quad \quad \quad #1}{}} % chapter Titel mit "Formatierung"
+\renewcommand{\chaptermark}[1]{ \markboth{\quad \quad \quad \bfseries#1 \quad \quad}{}} % chapter Titel mit "Formatierung"
 \renewcommand{\sectionmark}[1]{ \markright{#1 \quad \quad \quad}{}} % section Titel mit "Formatierung"
 \newlength\FHoffset
 \setlength\FHoffset{1cm}
-\addtolength\headwidth{1.5\FHoffset} % andere Länge für Header als Text
+\setlength{\headheight}{22pt}
+\setlength{\headsep}{5mm}
+\addtolength\headwidth{2\FHoffset} % andere Länge für Header als Text
 \fancyheadoffset{\FHoffset}
 \fancyfootoffset{\FHoffset}
 
 \renewcommand{\headrule}{\hbox to\headwidth{%
   \color{unicolor}\leaders\hrule height \headrulewidth\hfill}}
-% \renewcommand{\footrule}{\hbox to\headwidth{%
-%   \color{unicolor}\leaders\hrule height \headrulewidth\hfill}}
+% \xpretocmd\headrule{\color{unicolor}}{}{\PatchFailed}
 
-\lhead{\leftmark}
+\fancyhead[RO, LE]{\large \leftmark}
 \chead{}
-\rhead{\rightmark}
+% \rhead{\large \rightmark}
 \lfoot{}
-\cfoot{
+\fancyfoot[OC]{
+  \begin{tikzpicture}
+    \node at (0.5, 0) {\includegraphics[width=1cm, height=1cm]{vorlagen/logo2.png}};
+    \draw (0,-0.5) -- (0,0.5);
+    \node at (-0.5,0) {\thepage};
+  \end{tikzpicture}
+}
+\fancyfoot[EC]{
   \begin{tikzpicture}
     \node at (-0.5, 0) {\includegraphics[width=1cm, height=1cm]{vorlagen/logo2.png}};
     \draw (0,-0.5) -- (0,0.5);
@@ -122,6 +135,48 @@
     {
     \end{tcolorbox}
   \end{center}
+}
+
+% Chapter Formatting
+\newcommand{\tocchapter}{
+  \titlespacing*{\chapter}{0pt}{-5pt}{40pt}
+  \titleformat{\chapter}[display]
+    {\normalfont\bfseries\scshape\filcenter}
+    {\Huge\thechapter}
+    {1ex}
+    {\color{unicolor}\titlerule[7pt]
+    \vspace{4ex}%
+    \color{black}
+    \Huge}
+    [\vspace{1ex}%
+    \color{unicolor}
+    {\titlerule[7pt]}
+    \minitoc
+    \vspace{2cm}
+    {\includegraphics[scale=0.2]{vorlagen/logo.png}}
+    {\newpage}]
+
+    \assignpagestyle{\chapter}{empty}
+}
+
+
+\newcommand{\emptychapter}{
+  \titleformat{\chapter}[display]
+    {\normalfont\bfseries\scshape\filcenter}
+    {\Huge\thechapter}
+    {1ex}
+    {\color{unicolor}\titlerule[7pt]
+    \vspace{4ex}%
+    \color{black}
+    \Huge}
+    [\vspace{1ex}%
+    \color{unicolor}
+    {\titlerule[7pt]}
+    \vspace{7cm}
+    {\includegraphics[scale=0.4]{vorlagen/logo.png}}
+    {\newpage}]
+
+    \assignpagestyle{\chapter}{empty}
 }
 
 % used for resos and pospaps
