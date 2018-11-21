@@ -6,8 +6,8 @@ import numpy as np
 
 name_file = "vorlagen/redeliste.csv"
 
-input_file  = "plenum/anfang.tex"
-output_file = "plenum/anfang_neu.tex"
+input_file  = "plenum/wahlen.tex"
+output_file = "plenum/wahlen_neu.tex"
 
 with open(input_file, "r") as f1:
 	text_in = f1.read()
