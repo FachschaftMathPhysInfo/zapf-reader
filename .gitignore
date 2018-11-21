@@ -242,3 +242,7 @@ TSWLatexianTemp*
 # generated if using elsarticle.cls
 *.spl
 .DS_Store
+
+# Redeliste
+redeliste.csv
+namen.csv
