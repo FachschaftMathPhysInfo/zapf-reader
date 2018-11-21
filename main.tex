@@ -1,68 +1,71 @@
 % !TEX TS-program = pdflatex
 % !TEX encoding = UTF-8 Unicode
 
-\documentclass[ngerman, 11pt, openany]{scrbook}
+\documentclass[ngerman, 10pt, openany]{scrbook}
 \input{header}
 
 \begin{document}
 
-\dominitoc
-\tableofcontents
+\title{ZaPF-Reader}
+\author{Fachschaft MathPhysInfo}
+\maketitle
 
 %\newgeometry	{papersize={154mm,216mm}, layout=a5paper, layouthoffset=3mm,     layoutvoffset=3mm, inner=10mm, top=15mm, heightrounded}
-\addtocontents{toc}{\vspace{-2cm}}
+\addtocontents{toc}{\vspace{-1cm}}
 \addtocontents{toc}{~\hfill\textbf{Seite}\par}
 
 \newpage
 \setcounter{tocdepth}{1} %sections werden noch aufgelistet, subsections nicht mehr
-\small\tableofcontents
 \normalsize
 
-\newpage
-\part{ZaPF-Reader}
+%\dominitoc
+\dominitoc
+\tableofcontents
+
+\emptychapter
 
 \chapter{Einleitung}
-  \input{einleitung}
+  \input{drumrum/einleitung}
 
 \chapter{Anwesende Fachschaften}
   \input{plenum/anwesend}
 
+\tocchapter
+
 \chapter{Beschlüsse der ZAPF}
-  \minitoc
+  \label{chap:reso}
   \section{Resolutionen}
     Alle folgenden Resolutionen wurden am 03.06.2018 in Heidelberg im Rahmen des Endplenums
     vorgestellt, diskutiert und beschlossen.
-    % \begin{resofont}
-    %   \input{resos/reso_ablaeufe_akkr.tex}
-    %   \input{resos/reso_depressionen.tex}
-    %   \input{resos/reso_hsgesetze.tex}
-    %   \input{resos/reso_laender_akkr.tex}
-    %   \input{resos/reso_mobilitaet.tex}
-    %   \input{resos/reso_nullresults.tex}
-    %   \input{resos/reso_pruefungsanmeldung.tex}
-    %   \input{resos/reso_shk_raete_nrw.tex}
-    %   \input{resos/reso.tex}
-    % \end{resofont}
+      \input{resos/reso_ablaeufe_akkr.tex}
+      \input{resos/reso_depressionen.tex}
+      \input{resos/reso_hsgesetze.tex}
+      \input{resos/reso_laender_akkr.tex}
+      \input{resos/reso_mobilitaet.tex}
+      \input{resos/reso_nullresults.tex}
+      \input{resos/reso_pruefungsanmeldung.tex}
+      \input{resos/reso_shk_raete_nrw.tex}
+      \input{resos/reso.tex}
 
   \section{Positionspapiere}
     Alle folgenden Positionspapiere wurden am 03.06.2018 in Heidelberg im Rahmen des Endplenums
     vorgestellt, diskutiert und beschlossen.
-    % \begin{resofont}
-    %   \input{resos/pospap_fachdidaktik.tex}
-    %   \input{resos/pospap_svmrvo.tex}
-    %   \input{resos/pospap_werbung.tex}
-    % \end{resofont}
+      \input{resos/pospap_fachdidaktik.tex}
+      \input{resos/pospap_svmrvo.tex}
+      \input{resos/pospap_werbung.tex}
 
   \section{Solidaritätserklärung}
     Die folgende Erklärung wurden am 03.06.2018 in Heidelberg im Rahmen des Endplenums
     vorgestellt, diskutiert und beschlossen.
-    % \begin{resofont}
-    %   \input{resos/solierklaerung.tex}
-    % \end{resofont}
+      \input{resos/solierklaerung.tex}
+
+\chapter{Wahlen}
+  \input{plenum/wahlen_neu}
 
 \chapter{Anfangsplenum}
-  \minitoc
-  \input{plenum/anfang}
+  \input{plenum/anfang_neu}
+\chapter{Endplenum}
+  \input{plenum/ende_neu}
 
 \chapter{AK-Protokolle}
   \input{ak/ak_afd}
@@ -103,7 +106,11 @@
   \input{ak/ak_vertrauensperson}
   \input{ak/ak_weiterstudif}
   \input{ak/ak_wisskomm}
-  % \input{ak/metafa}
-  % \input{ak/zapf_ev}
+  \input{ak/metafa}
+  \input{ak/zapf_ev}
+
+\emptychapter
+\chapter{Schlussworte}
+  \input{drumrum/schluss}
 
 \end{document}
