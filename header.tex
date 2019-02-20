@@ -51,8 +51,11 @@
 \parindent 0pt                 % Absatzeinrücken verhindern (pck:blindtext)
 \parskip 2pt                 % Absätze durch Lücke trennen
 
-% Inhaltsverzeichnis
+% ToC Formatting
+\pagestyle{plain}
 \renewcommand\cftbeforetoctitleskip{-1cm}
+\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries\underline{{\color{unicolor}}}}
+\renewcommand{\cftaftertoctitle}{\hfill}
 
 % Suche nach Grafiken in ./media und .:
 % \graphicspath{{./media/}{./}}
