@@ -92,22 +92,22 @@
 \fancyhead[RO, LE]{\large \leftmark}
 \chead{}
 % \rhead{\large \rightmark}
-\lfoot{}
-\fancyfoot[OC]{
+
+\fancyfoot[OR]{
   \begin{tikzpicture}
     \node at (0.5, 0) {\includegraphics[width=1cm, height=1cm]{vorlagen/logo2.png}};
-    \draw (0,-0.5) -- (0,0.5);
-    \node at (-0.5,0) {\thepage};
+    \draw [thick, unicolor] (0,-0.5) -- (0,0.5);
+    \node at (-0.5,0) {\Large \thepage};
   \end{tikzpicture}
 }
-\fancyfoot[EC]{
+
+\fancyfoot[EL]{
   \begin{tikzpicture}
     \node at (-0.5, 0) {\includegraphics[width=1cm, height=1cm]{vorlagen/logo2.png}};
-    \draw (0,-0.5) -- (0,0.5);
-    \node at (0.5,0) {\thepage};
+    \draw [thick, unicolor] (0,-0.5) -- (0,0.5);
+    \node at (0.5,0) {\Large \thepage};
   \end{tikzpicture}
 }
-\rfoot{}
 
 % Boxen etwa für Abstimmungen in Plenen
 \newenvironment{success}[1]{
