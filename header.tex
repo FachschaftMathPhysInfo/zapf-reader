@@ -56,8 +56,14 @@
 % ToC Formatting
 \pagestyle{plain}
 \renewcommand\cftbeforetoctitleskip{-1cm}
-\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries\underline{{\color{unicolor}}}}
-\renewcommand{\cftaftertoctitle}{\hfill}
+\renewcommand{\cfttoctitlefont}{\Large\bfseries\textcolor{unicolor}}
+\renewcommand{\cftaftertoctitle}{\hfill\textbf{\textcolor{unicolor}{Seite}}\par\noindent\textcolor{unicolor}{\hrulefill}}
+
+\renewcommand{\cftsecleader}{\bfseries\color{unicolor}\cftdotfill{\cftdotsep}}
+
+\renewcommand\cftchappagefont{\color{unicolor}}
+\renewcommand\cftsecpagefont{\color{unicolor}}
+\renewcommand\cftsubsecpagefont{\color{unicolor}}
 
 % Suche nach Grafiken in ./media und .:
 % \graphicspath{{./media/}{./}}
