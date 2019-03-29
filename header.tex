@@ -202,5 +202,7 @@
 % \renewcommand{\footrulewidth}{0.1pt}
 % \newcommand{\gen}{*innen}
 
-%Unterdrückt Section und Subsection Nummern, also werden nur Chapter Nummer angezeigt
-\setcounter{secnumdepth}{0}
+% Section und Subsection Nummern
+\setcounter{secnumdepth}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\Roman{subsection}}
