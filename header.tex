@@ -214,3 +214,8 @@
 % \renewcommand\thesection{\textcolor{gray}{\textbf{\arabic{section}}}\textcolor{unicolor}{\textbf{ |}}}
 % \renewcommand\thesubsection{\fcolorbox{unicolor}{white}{\textcolor{gray}{\Roman{subsection}}}}
 \renewcommand\thesubsection{\textcolor{gray}{\Roman{subsection} }}
+
+%Section or subsection with number but no toc entry
+\newcommand{\nocontentsline}[3]{}
+\newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
+
