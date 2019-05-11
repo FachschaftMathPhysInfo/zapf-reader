@@ -193,6 +193,25 @@
     \assignpagestyle{\chapter}{empty}
 }
 
+\newcommand{\lastchapter}{
+  \titleformat{\chapter}[display]
+    {\normalfont\bfseries\scshape\filcenter}
+    {\Huge\thechapter}
+    {1ex}
+    {\color{unicolor}\titlerule[7pt]
+    \vspace{4ex}%
+    \color{black}
+    \Huge}
+    [\vspace{1ex}%
+    \color{unicolor}
+    {\titlerule[7pt]}
+    \vspace{7cm}
+    {\includegraphics[scale=0.4]{vorlagen/logo.png}}
+    {}]
+
+    \assignpagestyle{\chapter}{empty}
+}
+
 % used for resos and pospaps
 % \pagestyle{empty}
 % \cfoot{}
