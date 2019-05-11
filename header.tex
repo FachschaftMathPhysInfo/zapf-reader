@@ -1,4 +1,4 @@
-% !TEX ROOT = main.tex
+% !TEX root = main.tex
 
 \usepackage{afterpage}
 \usepackage{amsmath}
@@ -205,6 +205,12 @@
 % Section und Subsection Nummern
 \setcounter{secnumdepth}{2}
 % \renewcommand\thesection{\colorbox{unicolor}{\textcolor{white}{\arabic{section}}}\textcolor{unicolor}{|}}
-\renewcommand\thesection{\textcolor{gray}{\textbf{\arabic{section}}}\textcolor{unicolor}{\textbf{ |}}}
+\renewcommand\thesection{
+  \ifnum\value{section}<10
+    {\hbox{\,\,\,}\textcolor{gray}{\textbf{\arabic{section}}}\textcolor{unicolor}{\textbf{ |}}}
+  \else
+    {\textcolor{gray}{\textbf{\arabic{section}}}\textcolor{unicolor}{\textbf{ |}}}
+  \fi}
+% \renewcommand\thesection{\textcolor{gray}{\textbf{\arabic{section}}}\textcolor{unicolor}{\textbf{ |}}}
 % \renewcommand\thesubsection{\fcolorbox{unicolor}{white}{\textcolor{gray}{\Roman{subsection}}}}
 \renewcommand\thesubsection{\textcolor{gray}{\Roman{subsection} }}
