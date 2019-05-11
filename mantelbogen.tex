@@ -3,6 +3,7 @@
 
 %zusätzliche Packages nur für den Mantelbogen
 \usepackage[absolute]{textpos}  % Zum Positionieren der Grafiken
+\usepackage{tikz}
 \usepackage{rotating}           % Zum Drehen von Text
 \setlength{\parindent}{0pt}
 \usepackage{background}
@@ -22,15 +23,15 @@ contents={\includegraphics[width=\paperwidth]{vorlagen/vangogh}}
 \centering
 \vspace*{-10mm}
 
-\includegraphics[width=60mm]{vorlagen/logo_breit} 
+\includegraphics[width=60mm]{vorlagen/logo.png}
 
 \vspace*{14cm} \centering \fontsize{40}{48} \textbf{Tagungsreader}
 \normalsize
 
 %\begin{textblock*}{148mm}[0,0](0mm,100mm)
-    %\includegraphics[width=148mm]{logo_breit} 
+    %\includegraphics[width=148mm]{logo_breit}
 %\end{textblock*}
-      
+
 % TeX denkt, dass die Seite noch leer ist und macht deswegen keinen
 % pagebreak. Das \null täuscht TeX und alle sind glücklich (bis auf die
 % Perfektionisten natürlich)
@@ -50,7 +51,7 @@ contents={}
                 Der Redaktionsschluss für diesen Text war am 21. November 2018. Wir freuen uns
                 sehr über Komplimente, Blumen und Kuchen -- melde dich bei
                 \href{mailto:akzapf@mathphys.stura.uni-heidelberg.de}{akzapf@mathphys.stura.uni-heidelberg.de}. \\
-                Vielen Dank an dieser Stelle noch mal für keine Hilfe ... 
+                Vielen Dank an dieser Stelle noch mal für keine Hilfe ...
             }
             \vspace{1cm}
         }\\
@@ -59,14 +60,14 @@ contents={}
        	\textbf{Bild Copyrights}
        	\begin{tabbing}
         Christoph Blattgerste \quad \quad \= Editor \\
-		Christoph Blattgerste \quad \quad \=  Titelbild (Cover) \\		
+		Christoph Blattgerste \quad \quad \=  Titelbild (Cover) \\
 		Henrik Reinstädtler\> Titelbild van Gogh Stil \\
 		Lennart Stipulkowski \> ZaPF Logo \\
 		Christoph Blattgerste\footnotemark \> Skizze \\
-        Christoph Blattgerste \quad \quad \= Design	
+        Christoph Blattgerste \quad \quad \= Design
 		\end{tabbing}
        	}
-      }\\  
+      }\\
 
         \textbf{Impressum} \\ \\
         Herausgeber & Studienfachschaft Physik, Universität Heidelberg \\
@@ -78,7 +79,7 @@ contents={}
     \end{tabular*}
 
         \footnotetext[1]{www.xkcd.com}
-        \footnotetext[2]{www.samuelscherer.de}                
+        \footnotetext[2]{www.samuelscherer.de}
     \vfill
 
 
@@ -86,36 +87,29 @@ contents={}
 \newpage
 
 % RÜCKSEITE, INNEN %
-% wird nicht verwendet -> stattdessen Schlussworte
-\pagestyle{empty}
-% Campusplan
-\null
-\backgroundsetup{
-scale=1.02,
-angle=90,
-opacity=1,  %% adjust
-contents={\includegraphics[angle=90, width=5cm]{vorlagen/exzellente}}
-}
+
+\input{drumrum/schluss}
 
 \newpage
 
 % RÜCKSEITE, AUSSEN %
-\pagestyle{empty}
-\null
-\backgroundsetup{
-scale=1.075,
-angle=270,
-opacity=1,  %% adjust
-contents={\includegraphics[angle=90, width=10cm]{bilder/orga.png}}
-}
 
-\Huge \textbf{Mit fachschaftlichen Grüßen}
+  \vspace*{2cm}
 
-\vspace{15cm}
+  \Huge \textbf{Mit fachschaftlichen Grüßen}
 
-\Huge \textbf{Deine Orga}
-%\begin{textblock}{30}(8.8,1)
-%\includegraphics[width=50mm]{MathPhysInfoLogo} 
-%\end{textblock}
-\newpage
+  \vspace{1.5cm}
+
+  \includegraphics[width=\textwidth]{bilder/orga.png}
+
+  \vspace{1cm}
+
+  \begin{minipage}{0.6\textwidth}
+    \hspace*{0.5cm} \Huge \textbf{Deine Orga}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.3\textwidth}
+    \includegraphics[width=2´3cm]{bilder/exzellent.png}
+  \end{minipage}
+
 \end{document}
